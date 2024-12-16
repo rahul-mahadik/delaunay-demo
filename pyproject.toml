@@ -1,0 +1,4 @@
+[project]
+name = "delaunay-demo"
+version = "1.0.0"
+description = "A Delaunay triangulation demo"
