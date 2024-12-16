@@ -13,6 +13,33 @@ import asyncio
 # Initialize Pygame
 pygame.init()
 
+# Set up the display
+WIDTH = 800
+HEIGHT = 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)
+pygame.display.set_caption("Delaunay Demo")
+
+async def main():
+    running = True
+    while running:
+        # Handle events
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            
+        # Clear screen
+        screen.fill((255, 255, 255))  # White background
+        
+        # Draw here
+        pygame.draw.circle(screen, (0, 0, 255), (WIDTH//2, HEIGHT//2), 30)
+        
+        # Update display
+        pygame.display.flip()
+        
+        # Control frame rate
+        await asyncio.sleep(0)  # Required for Pygbag
+
+asyncio.run(main())
 # Colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
